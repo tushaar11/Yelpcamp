@@ -14,8 +14,21 @@ var  express        =require("express"),
 var commentRoutes    =require("./routes/comments"),
     campgroundRoutes =require("./routes/campgrounds"),
     indexRoutes      =require("./routes/index");
-    
-mongoose.connect("mongodb+srv://tushaar11:<yelpcamp@123>@clusteryelpcamp-rwveg.mongodb.net/test?retryWrites=true");     
+
+// const MongoClient = require("mongoose").MongoClient;
+// const uri = "";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });    
+mongoose.connect("mongodb+srv://tushaar:yelpcamp@clusteryelpcamp-rwveg.mongodb.net/yelp_camp?retryWrites=true",{useNewUrlParser: true});     
+// mongoose.connect("mongodb://localhost/yelp_camp_v10");
+
+// MongoClient.connect(uriTestDb, function(err, db) {
+//   db.close();
+// });
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
